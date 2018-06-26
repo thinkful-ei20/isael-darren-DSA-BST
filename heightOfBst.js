@@ -1,3 +1,5 @@
+'use strict';
+
 const BinarySearchTree = require('./binarySearchTree');
 
 let newBinarySearchTree = new BinarySearchTree();
