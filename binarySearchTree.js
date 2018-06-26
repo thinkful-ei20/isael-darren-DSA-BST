@@ -112,6 +112,6 @@ easyQuestion.insert('o');
 easyQuestion.insert('n');
 
 
-console.log(easyQuestion);
+// console.log(easyQuestion);
 
 module.exports = BinarySearchTree;

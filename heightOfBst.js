@@ -9,29 +9,22 @@ let newBinarySearchTree = new BinarySearchTree();
 //if there is both left and right go one level down
 // 
 
-newBinarySearchTree.insert(3,null);
-newBinarySearchTree.insert(5,null);
-newBinarySearchTree.insert(6,null);
-newBinarySearchTree.insert(7,null);
-newBinarySearchTree.insert(10,null);
-newBinarySearchTree.insert(2,null);
-newBinarySearchTree.insert(1,null);
-newBinarySearchTree.insert(0,null);
-newBinarySearchTree.insert(15,null);
+newBinarySearchTree.insert(3, null);
+newBinarySearchTree.insert(1, null);
+newBinarySearchTree.insert(4, null);
+newBinarySearchTree.insert(6, null);
+newBinarySearchTree.insert(9, null);
+newBinarySearchTree.insert(2, null);
+newBinarySearchTree.insert(5, null);
+newBinarySearchTree.insert(7, null);
+// newBinarySearchTree.insert(15, null);
 
 function heighOfBst(bst){
-  
+  if(!bst) return 0;//base case 
+  let leftHeight = heighOfBst(bst.left); 
+  let rightHeight = heighOfBst(bst.right);
+  return Math.max(leftHeight, rightHeight) + 1;
 }
 
+console.log(heighOfBst(newBinarySearchTree));
 
-if (!bst.left && !bst.right) {
-  return 1;
-}
-if (bst.left && !bst.right) {
-  return 1 + placeholder(bst.left);
-} else if (bst.right && !bst.left) {
-  return 1 + placeholder(bst.right);
-} else {
-    placeholder(bst.right);
-    placeholder(bst.left)
-}
