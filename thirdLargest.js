@@ -19,16 +19,27 @@ newBinarySearchTree.insert(9, null);
 newBinarySearchTree.insert(2, null);
 newBinarySearchTree.insert(5, null);
 newBinarySearchTree.insert(7, null);
-let arr = [];
-function iterateBst(bst) {
-  // count++;
+
+function iterateBst(bst, arr) {
+  console.log('x');
   if (bst === null) return;
-  if (bst.right) iterateBst(bst.right);
-  // console.log('count',count)
-  arr.push(bst.key)
-  console.log(bst.key);
-  if (bst.left) iterateBst(bst.left);
+  if (bst.right) iterateBst(bst.right, arr);
+  if (arr.length < 3) {
+    arr.push(bst.key)
+  } else {
+    return;
+  }
+
+  // console.log(bst.key);
+  if (bst.left) iterateBst(bst.left, arr);
 }
 
+function test(bst) {
+  let arr = [];
+  iterateBst(bst, arr);
+  return arr[2];
+}
 
-iterateBst(newBinarySearchTree)
+console.log(test(newBinarySearchTree));
+// iterateBst(newBinarySearchTree)
+// console.log(arr);
