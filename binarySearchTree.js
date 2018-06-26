@@ -12,7 +12,7 @@ class BinarySearchTree {
     if (this.key === null) {
       this.key = key;
       this.value = value;
-    } else if (key < this.key) {
+    } else if (key <= this.key) {
       if (this.left == null) {
         this.left = new BinarySearchTree(key, value, this);
       } else {
@@ -62,15 +62,15 @@ class BinarySearchTree {
     }
   }
 
-  _replaceWith(node) {
-    if (this.parent) {
-      if (this === this.parent.left) {
-        this.parent.left = node;
+  _replaceWith(node) { //u
+    if (this.parent) { // y
+      if (this === this.parent.left) { //u
+        this.parent.left = node;//u = u
       } else if (this === this.parent.right) {
         this.parent.right = node;
       }
-      if (node) {
-        node.parent = this.parent;
+      if (node) { //u
+        node.parent = this.parent; //y = u
       }
     } else {
       if (node) {
@@ -94,3 +94,21 @@ class BinarySearchTree {
     return this.left._findMin();
   }
 }
+
+let easyQuestion = new BinarySearchTree();
+
+easyQuestion.insert('e');
+easyQuestion.insert('a');
+easyQuestion.insert('s');
+easyQuestion.insert('y');
+easyQuestion.insert('q');
+easyQuestion.insert('u');
+easyQuestion.insert('e');
+easyQuestion.insert('s');
+easyQuestion.insert('t');
+easyQuestion.insert('i');
+easyQuestion.insert('o');
+easyQuestion.insert('n');
+
+
+console.log(easyQuestion);
